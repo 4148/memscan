@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 project(memscan VERSION 0.1.0 LANGUAGES CXX)
 
+## build conditions:
+
+if(NOT MSVC)
+  message(FATAL_ERROR "Error: memscan only supports Windows right now!")
+endif()
+
 ## build settings:
 
 set(CMAKE_CXX_STANDARD 11)
