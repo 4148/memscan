@@ -3,8 +3,8 @@ project(memscan VERSION 0.1.0 LANGUAGES CXX)
 
 ## build conditions:
 
-if(NOT MSVC OR NOT ${CMAKE_SIZEOF_VOID_P} STREQUAL 4)
-  message(FATAL_ERROR "Error: memscan only supports Windows x64 right now!")
+if(NOT MSVC)
+  message(FATAL_ERROR "Error: memscan only supports Windows right now!")
 endif()
 
 ## build settings:
