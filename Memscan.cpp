@@ -56,7 +56,7 @@ Memscan::Memscan(string pin, PROCESS_MODE process_mode) {
 		wchar_t* temp_process_name = new wchar_t[temp_size];
 		// loop gets process name from process handle
 		while (true) {
-			if (0 == GetProcessImageFileName(process_handle, temp_process_name, temp_size)) {
+			if (0 == GetProcessImageFileNameW(process_handle, temp_process_name, temp_size)) {
 				cerr << "Error: GetProcessImageFileName() failed in " << basename(__FILE__) << ":" << __LINE__ << ". Last error: " << GetLastError() << "." << endl;
 				exit(1);
 			} else if (wcslen(temp_process_name) == (temp_size-1)) {

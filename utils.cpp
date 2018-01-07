@@ -200,7 +200,7 @@ HMODULE get_base_address(HANDLE process_handle, wstring path) {
 	wchar_t* module_path = new wchar_t[path.length()+1];
 	// find module of specified path
 	for (int i = 0; i < (needed/sizeof(HMODULE)); i++) {
-		GetModuleFileNameEx(process_handle, hmarr[i], module_path, (DWORD) path.length());
+		GetModuleFileNameExW(process_handle, hmarr[i], module_path, (DWORD) path.length());
 		if (to_upper(basename(path)) == to_upper(basename(module_path))) {
 			rtn = hmarr[i];
 			break;
