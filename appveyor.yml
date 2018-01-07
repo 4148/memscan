@@ -1,0 +1,18 @@
+os: Visual Studio 2015
+
+platform:
+  - x64
+
+configuration:
+  - Debug
+  - Release
+
+init:
+  - cmd: cmake --version
+  - cmd: msbuild /version
+
+build_script:
+  - cmd: md build
+  - cmd: cd build
+  - cmd: cmake -G "Visual Studio 14 2015 Win64" ..
+  - cmd: cmake --build . --config %configuration%
