@@ -21,6 +21,17 @@ You can also specify the combination of memory units you want to scan for (e.g.,
 
 Would scan the process for dwords and quadwords.
 
+### Building
+
+Being [Cmake](https://cmake.org/)-based, configure the project (preferably *out-of-source*) and run the build. Here is an example:
+
+```shh
+memscan$ mkdir build
+memscan$ cd build
+memscan/build$ cmake ..
+memscan/build$ cmake --build .
+```
+
 ### License
 memscan is distributed under the GNU General Public License v3.0 (GPLv3).
 
